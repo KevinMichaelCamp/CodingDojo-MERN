@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon API Demo</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        fetch("https://pokeapi.co/api/v2/pokemon")
+            .then(res => {
+                return res.json();
+            }).then(res => {
+                console.log(res);
+            }).catch(err => {
+                console.log(err);
+            });
+    </script>
+</body>
+
+</html>
