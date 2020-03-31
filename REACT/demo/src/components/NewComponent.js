@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 
 class NewComponent extends Component {
     render() {
+        const { header, children } = this.props;
         return (
             <div>
-                We are in my New Component
+                <h1>{header}</h1>
+                {children}
             </div>
         );
     }
 }
 
-export default NewComponent;;
+export default NewComponent;
