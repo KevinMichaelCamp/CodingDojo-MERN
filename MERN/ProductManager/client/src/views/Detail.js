@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, navigate } from '@reach/router';
+import DeleteButton from '../components/DeleteButton';
 import axios from 'axios';
+
 export default props => {
     const [product, setProduct] = useState({})
 
@@ -22,10 +24,10 @@ export default props => {
             <h1 className="display-4 mt-4 border-bottom">{product.title}</h1>
             <h4>Price: ${product.price}</h4>
             <h6>Description: {product.description}</h6>
-            <button className="btn btn-primary">
+            <button className="btn btn-primary btn-sm mr-2">
                 <Link style={{ color: "white" }} to={"/products/" + product._id + "/edit"}>Edit Product</Link>
             </button>
-            <button className="btn btn-danger ml-2" onClick={(e) => { deleteProduct(product._id) }}>Delete Product</button>
+            <DeleteButton productId={product._id} successCallback={() => navigate("/products")} />
         </div>
     )
 }
