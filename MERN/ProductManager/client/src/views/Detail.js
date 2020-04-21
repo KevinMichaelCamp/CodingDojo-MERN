@@ -13,12 +13,6 @@ export default props => {
             }))
     }, [])
 
-    const deleteProduct = (productId) => {
-        axios.delete('http://localhost:8000/api/products/' + productId)
-            .then(res => console.log(res));
-        navigate("/products");
-    }
-
     return (
         <div>
             <h1 className="display-4 mt-4 border-bottom">{product.title}</h1>
