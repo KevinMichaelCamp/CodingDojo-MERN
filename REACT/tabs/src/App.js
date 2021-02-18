@@ -7,6 +7,7 @@ const tabContents = [
   ['Tab 2', 'Content for tab 2'],
   ['Tab 3', 'Content for tab 3'],
 ]
+
 function App() {
   return (
     <div className="App">

@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from '@reach/router';
 import { Paper } from '@material-ui/core';
 import DeleteButton from './DeleteButton';
-import axios from 'axios';
 
 const styles = {
     paper: {
@@ -12,15 +11,6 @@ const styles = {
 
 export default props => {
     const { removeFromDom } = props;
-
-    // useEffect(() => {
-    //     axios.get('http://localhost:8000/api/authors')
-    //         .then(res => setAuthors(res.data));
-    // }, [])
-
-    // const removeFromDom = authorId => {
-    //     setAuthors(authors.filter(author => author._id !== authorId))
-    // }
 
     return (
         <Paper elevation={3} style={styles.paper}>

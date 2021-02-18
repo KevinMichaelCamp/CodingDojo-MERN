@@ -31,8 +31,8 @@ export default () => {
             })
     }
 
-    const removeFromDom = authorId => {
-        setAuthors(authors.filter(author => author._id != authorId));
+    const removefromdom = authorId => {
+        setAuthors(authors.filter(author => author._id !== authorId));
     }
 
     return (
@@ -42,7 +42,7 @@ export default () => {
                 onSubmitProp={createAuthor}
                 initialName=""
                 initialQuote="" />
-            {loaded && <AuthorList authors={authors} removeFromDom={removeFromDom} />}
+            {loaded && <AuthorList authors={authors} removefromdom={removefromdom} />}
             {errors.map((err, idx) =>
                 <p className="text-danger" key={idx}>{err}</p>
             )}

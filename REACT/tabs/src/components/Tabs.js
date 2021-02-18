@@ -8,14 +8,14 @@ const Tabs = ({ tabs }) => {
     })
 
     const onClickHandler = e => {
-        const [, ...contentList] = tabs[e.target.value];
+        const [, ...contentList ] = tabs[e.target.value];
         setTabState({
-            index: e.target.value,
+            index: parseInt(e.target.value),
             content: contentList
         })
     }
 
-    const resetButton = e => {
+    const resetButton = () => {
         setTabState({
             index: 99,
             content: []
@@ -32,12 +32,9 @@ const Tabs = ({ tabs }) => {
                 )
             })}
             <div>
-                {tabState.content.map((c, index) => {
-                    return <p key={index}>{c}</p>
-                })}
+                <p>{tabState.content}</p>
             </div>
             <button className={styles.inactiveButton} onClick={resetButton}>Reset</button>
-
         </div>
     )
 }
